@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PassportJS Authentication</title>
+  </head>
+  <body>
+    <% if (user) { %>
+    <h1>Hello <%= user.username %></h1>
+    <p>Hashed Password: <%= user.password %></p>
+    <a href="/logout">LOG OUT</a>
+    <% } else { %>
+    <h1>Please log in</h1>
+    <form action="/login" method="POST">
+      <h2>Log In</h2>
+      <label for="username">Username</label>
+      <input name="username" placeholder="username" type="text" />
+      <label for="password">Password</label>
+      <input name="password" type="password" />
+      <button>Log In</button>
+    </form>
+    <a href="/signup">Sign Up Instead</a>
+    <% } %>
+  </body>
+</html>
